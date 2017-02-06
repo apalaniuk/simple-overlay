@@ -2,11 +2,11 @@
   "name": "simple-overlay",
   "description": "Polymer-based web component for a D2L simple overlay",
   "scripts": {
-	"postinstall": "bower install",
+    "postinstall": "bower install",
     "test": "npm run test:lint:js && npm run test:lint:wc && wct",
     "test:lint:js": "eslint --ext .js,.html .",
     "test:lint:wc": "polylint --no-recursion --input *.html",
-    "test:no-lint": "wct -p",
+    "test:no-lint": "wct -p"
   },
   "repository": {
     "type": "git",
