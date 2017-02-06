@@ -1,14 +1,24 @@
 # d2l-simple-overlay
 
-A [Polymer](https://www.polymer-project.org/1.0/)-based web component D2L simple overlay element.
-
+A [Polymer](https://www.polymer-project.org/1.0/)-based web component D2L simple overlay element. Extends `iron-overlay` and adds some styling using various `neon` Polymer elements.
 For further information on this and other D2L UI components, see the docs at [ui.valence.d2l.com](http://ui.valence.d2l.com/).
 
 ## Installation
-
+`d2l-simple-overlay` can be installed from Bower:
+```shell
+bower install git://github.com/Brightspace/simple-overlay.git#v0.0.1
+```
 
 ## Usage
+```html
+<d2l-simple-overlay
+	title-name="Title"
+	close-simple-overlay-alt-text="close">
+</d2l-simple-overlay>
+```
 
+`title-name` appears at the top of the overlay.
+`close-simple-overlay-alt-text` is the localized string describing the "close" button for the aria-label
 
 ## Running tests locally in Windows
 
