@@ -7,16 +7,16 @@
 <link rel="import" href="../neon-animation/animations/fade-in-animation.html">
 <link rel="import" href="../neon-animation/animations/fade-out-animation.html">
 <link rel="import" href="../d2l-icons/d2l-icons.html">
-<link rel="import" href="d2l-simple-overlay-styles.html">
 <link rel="import" href="../d2l-polymer-behaviors/d2l-dom.html">
+<link rel="import" href="d2l-simple-overlay-styles.html">
 
 <!-- This overlay supports using different animations and transitions for desktop and mobile. -->
 <dom-module id="d2l-simple-overlay">
 	<style include="d2l-simple-overlay-styles"></style>
 	<template>
-		<span role="dialog" aria-label$="[[titleName]]">
+		<span class="d2l-typography" role="dialog" aria-label$="[[titleName]]">
 			<div class="max-width container">
-				<h1 class="d2l-heading-2">{{titleName}}</h1>
+				<h2 class="d2l-heading-2">{{titleName}}</h2>
 				<button
 					class="close-button"
 					on-tap="_handleClose"
