@@ -9,25 +9,32 @@
 <dom-module id="d2l-simple-overlay">
 	<style include="d2l-simple-overlay-styles">
 		@media (min-width: 768px) {
-			.d2l-simple-overlay-animate {
+			:host(.d2l-simple-overlay-animate) {
 				opacity: 0;
 				transform: scale(0.95) translateY(-100px);
-				transition: opacity transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+				-moz-transform-origin: 50% 0;
+				-webkit-transform-origin: 50% 0;
+				transform-origin: 50% 0;
+				transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+				transition-property: opacity, transform;
 			}
 
-			.d2l-simple-overlay-animate-open {
+			:host(.d2l-simple-overlay-animate-open) {
 				opacity: 1;
 				transform: scale(1) translateY(0);
 			}
 		}
 
 		@media (max-width: 767px) {
-			.d2l-simple-overlay-animate {
+			:host(.d2l-simple-overlay-animate) {
 				transform: translateY(100%);
+				-moz-transform-origin: 50% 0;
+				-webkit-transform-origin: 50% 0;
+				transform-origin: 50% 0;
 				transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
 			}
 
-			.d2l-simple-overlay-animate-open {
+			:host(.d2l-simple-overlay-animate-open) {
 				transform: translateY(0);
 			}
 		}
