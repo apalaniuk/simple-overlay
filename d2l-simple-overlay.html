@@ -68,7 +68,7 @@
 				Polymer.IronOverlayBehavior
 			],
 			listeners: {
-				'animationend': '_onAnimationEnd',
+				'transitionend': '_onTransitionEnd',
 				'image-selector-tile-image-selected': '_handleCloseSimpleOverlayEvent'
 			},
 			properties: {
@@ -110,7 +110,7 @@
 				var width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 				return width < 768;
 			},
-			_onAnimationEnd: function() {
+			_onTransitionEnd: function() {
 				if (this.opened) {
 					this._finishRenderOpened();
 				} else {
