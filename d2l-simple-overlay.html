@@ -75,10 +75,6 @@
 				e.stopPropagation();
 				this._handleClose();
 			},
-			_isMobile: function() {
-				var width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-				return width < 768;
-			},
 			_onTransitionEnd: function() {
 				if (this.opened) {
 					this._finishRenderOpened();
