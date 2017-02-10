@@ -112,12 +112,10 @@
 				}
 			},
 			_renderClosed: function() {
-				this.cancelAnimation();
 				this._restoreBodyOverflow();
 				this.classList.remove('d2l-simple-overlay-animate-open');
 			},
 			_renderOpened: function() {
-				this.cancelAnimation();
 				this._trapBodyOverflow();
 
 				this._onNodesChange();
