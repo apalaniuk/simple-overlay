@@ -55,8 +55,6 @@
 				this._updateBackdropStyle();
 			},
 			ready: function() {
-				this.classList.add('d2l-simple-overlay-animate');
-
 				new MutationObserver(this.invalidateTabbables.bind(this)).observe(this, {
 					childList: true,
 					subtree: true
@@ -85,7 +83,7 @@
 			},
 			_renderClosed: function() {
 				this._restoreBodyOverflow();
-				this.classList.remove('d2l-simple-overlay-animate-open');
+				this.classList.remove('d2l-simple-overlay-open');
 			},
 			_renderOpened: function() {
 				this._trapBodyOverflow();
@@ -95,7 +93,7 @@
 				this._notifyDistributedChildren('d2l-simple-overlay-opening');
 				this.fire('d2l-simple-overlay-opening');
 
-				this.classList.add('d2l-simple-overlay-animate-open');
+				this.classList.add('d2l-simple-overlay-open');
 			},
 			_restoreBodyOverflow: function() {
 				document.body.style.overflow = this._oldBodyOverflow;
