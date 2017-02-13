@@ -73,7 +73,11 @@
 				e.stopPropagation();
 				this._handleClose();
 			},
-			_onTransitionEnd: function() {
+			_onTransitionEnd: function(e) {
+				if (e.target !== this) {
+					return;
+				}
+
 				if (this.opened) {
 					this._finishRenderOpened();
 				} else {
