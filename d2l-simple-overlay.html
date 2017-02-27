@@ -7,11 +7,11 @@
 
 <!-- This overlay supports using different animations and transitions for desktop and mobile. -->
 <dom-module id="d2l-simple-overlay">
-	<style include="d2l-simple-overlay-styles"></style>
 	<template>
-		<span class="d2l-typography" role="dialog" aria-label$="[[titleName]]">
+		<style include="d2l-simple-overlay-styles"></style>
+		<span role="dialog" aria-label$="[[titleName]]">
 			<div class="max-width container">
-				<h2 class="d2l-heading-2">{{titleName}}</h2>
+				<h2 class="d2l-simple-overlay-title">{{titleName}}</h2>
 				<button
 					class="close-button"
 					on-tap="_handleClose"
