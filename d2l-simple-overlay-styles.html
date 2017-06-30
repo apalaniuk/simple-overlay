@@ -1,5 +1,4 @@
 <link rel="import" href="../d2l-colors/d2l-colors.html">
-<link rel="import" href="../d2l-icons/d2l-icons.html">
 <link rel="import" href="../d2l-typography/d2l-typography-shared-styles.html">
 
 <dom-module id="d2l-simple-overlay-styles">
@@ -26,39 +25,11 @@
 			@apply --d2l-heading-2;
 		}
 
-		.close-button {
-			background: none;
-			border: none;
-			margin: 0;
-			padding: 0 0 0.2rem 0;
-			cursor: pointer;
-		}
-
 		.container {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
 			min-height: 5.25rem;
-		}
-
-		.close-button d2l-icon {
-			border: 1px solid transparent;
-			padding: 8px;
-		}
-
-		.close-button:focus d2l-icon, .close-button:hover d2l-icon {
-			border-radius: 0.3rem;
-			border-color: var(--d2l-color-pressicus);
-			color: var(--d2l-color-celestuba);
-		}
-
-		.close-button * {
-			box-sizing: content-box;
-		}
-
-		d2l-icon {
-			--iron-icon-height: 12px;
-			--iron-icon-width: 12px;
 		}
 
 		.scrollable {
@@ -84,9 +55,6 @@
 		@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 			.d2l-simple-overlay-title {
 				padding-top: 32px;
-			}
-			.close-button {
-				padding-top: 24px;
 			}
 		}
 
