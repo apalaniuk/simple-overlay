@@ -2,6 +2,7 @@
 <link rel="import" href="../iron-overlay-behavior/iron-overlay-behavior.html">
 <link rel="import" href="../d2l-icons/d2l-icons.html">
 <link rel="import" href="../d2l-polymer-behaviors/d2l-dom.html">
+<link rel="import" href="d2l-simple-overlay-close-button.html">
 
 <link rel="import" href="d2l-simple-overlay-styles.html">
 
@@ -10,19 +11,18 @@
 	<template>
 		<style include="d2l-simple-overlay-styles"></style>
 		<span role="dialog" aria-label$="[[titleName]]">
-			<div class="max-width container">
-				<h2 class="d2l-simple-overlay-title">{{titleName}}</h2>
-				<button
-					class="close-button"
-					on-tap="_handleClose"
-					aria-label$="[[closeSimpleOverlayAltText]]"
-					alt$="[[closeSimpleOverlayAltText]]">
-					<d2l-icon icon="d2l-tier1:close-large-thick"></d2l-icon>
-				</button>
-			</div>
+			<slot name="header">
+				<div class="max-width container">
+					<h2 class="d2l-simple-overlay-title">{{titleName}}</h2>
+					<d2l-simple-overlay-close-button
+						aria-label$="[[closeSimpleOverlayAltText]]"
+						alt$="[[closeSimpleOverlayAltText]]">
+					</d2l-simple-overlay-close-button>
+				</div>
+			</slot>
 			<div class="scrollable">
 				<div class="max-width">
-					<content></content>
+					<slot></slot>
 				</div>
 			</div>
 		</span>
@@ -38,7 +38,9 @@
 			],
 			listeners: {
 				'transitionend': '_onTransitionEnd',
-				'image-selector-tile-image-selected': '_handleCloseSimpleOverlayEvent'
+				'image-selector-tile-image-selected': '_handleCloseSimpleOverlayEvent',
+				'd2l-simple-overlay-close-button-clicked': '_handleClose',
+				'iron-overlay-canceled': '_handleCancel'
 			},
 			properties: {
 				// Title for overlay
@@ -62,6 +64,9 @@
 			},
 			get _focusableNodes() {
 				return [D2L.Dom.Focus.getFirstFocusableDescendant(this), D2L.Dom.Focus.getLastFocusableDescendant(this)];
+			},
+			_handleCancel: function() {
+				this.fire('d2l-simple-overlay-canceled');
 			},
 			_handleClose: function() {
 				this.close();
